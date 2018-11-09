@@ -1,4 +1,4 @@
-public class FootballMatch3 {
+public class Player {
 	private String name;
 	private String nationality;
 	private String league;

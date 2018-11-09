@@ -1,5 +1,5 @@
 
-public class FootballMatch2 {
+public class Team {
 	private String name;
 	private String category;
 	private String country;

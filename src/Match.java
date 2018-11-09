@@ -1,4 +1,4 @@
-public class FootballMatch {
+public class Match {
 
 	private String LocalTeam;
 	private String VisitorTeam;
