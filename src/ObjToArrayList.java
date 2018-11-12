@@ -2,26 +2,38 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class ObjToArrayList {
+	
 	public static void main (String[]args) {
-		ArrayList<String> footballmatches = new Arraykust<String>();
+		ArrayList<Match> footballmatches = new ArrayList<Match>();
 		try {
 			File file = new File(args[0]);
 			Scanner sc = new Scanner(file);
 			while (sc.hasNextLine()) {
-	            String i = sc.nextLine();
-	            System.out.println(i);
-	            FootballMatch match = new FootballMatch();
-	            for (int z = 0; z < word.length; z++) {
-	            	match.getLocalTeam
-	            }
+	            String matches = sc.nextLine();
+	            System.out.println(matches);
+	            String[] fmatch = matches.split("::");
+	            Match match = new Match();
+	            match.setLocalTeam(fmatch[0]);
+				match.setVisitorTeam(fmatch[1]);
+				match.setGoalsLocal(Integer.parseInt(fmatch[2]));
+				match.setGoalsVisitor(Integer.parseInt(fmatch[3]));
+				footballmatches.add(match);
+	            
 			}
+	            
+	      for (int z = 0; z < footballmatches.size(); z++) {
+	        System.out.println(footballmatches.get(z).getLocalTeam()+ "-" + footballmatches.get(z).getVisitorTeam() + ":" + footballmatches.get(z).getGoalsLocal() + "-" + footballmatches.get(z).getGoalsVisitor() );
+	        System.out.println("There are " + footballmatches.size() + " matches." );	
+	      }
+			
 			System.out.println(footballmatches);
-			System.out.println("There are " + footballmatches.size() + " matches." );
+			
 		}
-		 catch (FileNotFoundException e) {
+		  catch (FileNotFoundException e) {
 			System.out.println("File is not founded.");
-			 }
+		  }
 		
 	}
 }
