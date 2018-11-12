@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.Scanner;
 
-public class ObjToArrayList {
+public class ArrayListIterator {
 	
 	public static void main (String[]args) {
 		ArrayList<Match> footballmatches = new ArrayList<Match>();
