@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 public class ObjToArrayList {
@@ -25,6 +26,17 @@ public class ObjToArrayList {
 				match.setGoalsVisitor(Integer.parseInt(fmatch[3]));
 				// We add all the variables in the ArrayList
 				footballmatches.add(match);
+				//We create a ListIterator.
+				ListIterator it = footballmatches.listIterator();
+				Match mtch = new Match();
+				mtch = (Match) it.next();
+				// We crete a condition, if they are the same.
+				if (mtch.getGoalsLocal() == mtch.getGoalsVisitor()) {
+					System.out.println(mtch.getLocalTeam() + "and" + mtch.getVisitorTeam()+ "drawed." );
+					// Remove the drawed matches.
+					it.remove();
+				
+				}
 	            
 			}
 	            
