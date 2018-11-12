@@ -8,17 +8,22 @@ public class ObjToArrayList {
 	public static void main (String[]args) {
 		ArrayList<Match> footballmatches = new ArrayList<Match>();
 		try {
+			// We create a new file argument
 			File file = new File(args[0]);
 			Scanner sc = new Scanner(file);
+			
 			while (sc.hasNextLine()) {
 	            String matches = sc.nextLine();
 	            System.out.println(matches);
+	            // We separate the string by ::
 	            String[] fmatch = matches.split("::");
 	            Match match = new Match();
+	            // We create the variables for the Local/Visitor Teams and goals
 	            match.setLocalTeam(fmatch[0]);
 				match.setVisitorTeam(fmatch[1]);
 				match.setGoalsLocal(Integer.parseInt(fmatch[2]));
 				match.setGoalsVisitor(Integer.parseInt(fmatch[3]));
+				// We add all the variables in the ArrayList
 				footballmatches.add(match);
 	            
 			}
