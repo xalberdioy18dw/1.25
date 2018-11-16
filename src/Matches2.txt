@@ -1,0 +1,5 @@
+Real Sociedad::FC Barcelona::2::1
+River Plate::Shanghai SIPG::2::0
+Vissel Kobe::Shakhtar Donetsk::0::3
+AC Milan::Borussia Dortmund::1::3
+West Ham United::Real Club Betis Balonpie::2::2
