@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ReadTeams {
 	public static void main(String[]args) {
 		ArrayList<Team> teamsinfo = new ArrayList<Team>();
+		ArrayList<Match> footballmatches = new ArrayList<Match>();
 		try {
 			File file = new File(args[0]);
 			Scanner sc = new Scanner(file);
@@ -17,7 +18,20 @@ public class ReadTeams {
 				team.setcountry(fteams[2]);
 				team.setleague(fteams[3]);
 				teamsinfo.add(team);
-			System.out.println(team.getname());
+				
+			File file2 = new File(args[1]);
+			Scanner sc2 = new Scanner(file);
+			while (sc.hasNextLine()) {
+	            String matches = sc.nextLine();
+	            System.out.println(matches);	            
+	            String[] fmatch = matches.split("::");
+	            Match match = new Match();	         
+	            match.setLocalTeam(fmatch[0]);
+				match.setVisitorTeam(fmatch[1]);
+				match.setGoalsLocal(Integer.parseInt(fmatch[2]));
+				match.setGoalsVisitor(Integer.parseInt(fmatch[3]));
+				footballmatches.add(match);
+			}
 			}
 		}
 		catch (FileNotFoundException e) {
