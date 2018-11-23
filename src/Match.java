@@ -1,24 +1,24 @@
 public class Match {
 
-	private String LocalTeam;
-	private String VisitorTeam;
+	private Team LocalTeam;
+	private Team VisitorTeam;
 	private int goalsLocal;
 	private int goalsVisitor;
 
-	public String getLocalTeam() {
+	public Team getLocalTeam() {
 		return LocalTeam;
 	
     }
 
-	public void setLocalTeam(String LocalTeam) {
+	public void setLocalTeam(Team LocalTeam) {
 		this.LocalTeam = LocalTeam;
 	}
 
-	public String getVisitorTeam() {
+	public Team getVisitorTeam() {
 		return VisitorTeam;
 	}
 
-	public void setVisitorTeam(String visitorTeam) {
+	public void setVisitorTeam(Team visitorTeam) {
 		this.VisitorTeam = VisitorTeam;
 		
 	}
